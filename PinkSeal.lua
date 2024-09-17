@@ -1,13 +1,13 @@
 --- STEAMODDED HEADER
---- MOD_NAME: Green Seal
---- MOD_ID: GreenSeal
---- MOD_AUTHOR: [AxBolduc, mwithington]
---- MOD_DESCRIPTION: Adds a Green Seal to the game
+--- MOD_NAME: Pink Seal
+--- MOD_ID: PinkSeal
+--- MOD_AUTHOR: [AxBolduc, mwithington, JonJaded]
+--- MOD_DESCRIPTION: Adds a Pink Seal to the game
 
 ----------------------------------------------
 ------------MOD CODE -------------------------
 
-local MOD_ID = 'GreenSeal'
+local MOD_ID = 'PinkSeal'
 
 
 function SMODS.INIT.RatSeal()
@@ -15,16 +15,16 @@ function SMODS.INIT.RatSeal()
 
     add_seal(
         MOD_ID,
-        'Green',
-        'green_seal',
-        'Green Seal',
+        'Pink',
+        'pink_seal',
+        'Pink Seal',
         {
             discovered = false,
             set = 'Seal',
             config = {}
         },
         {
-            name = "Green Seal",
+            name = "Pink Seal",
             text = {
                 "Increases round hand size",
                 "by 1 when {C:attention}discarded"
@@ -50,7 +50,7 @@ function SMODS.INIT.RatSeal()
         {
             name = "Ancillary",
             text = {
-                "Add a {C:green}Green Seal{}",
+                "Add a {C:eternal}Pink Seal{}",
                 "to {C:attention}1{} selected",
                 "card in your hand"
             }
@@ -307,14 +307,14 @@ function generate_card_ui(_c, full_UI_table, specific_vars, card_type, badges, h
 
     if _c.set == 'Spectral' then
         if _c.name == 'Ancillary' then
-            info_queue[#info_queue + 1] = { key = 'green_seal', set = 'Other' }
+            info_queue[#info_queue + 1] = { key = 'pink_seal', set = 'Other' }
         end
     end
 
 
     if not (_c.set == 'Edition') and badges then
         for k, v in ipairs(badges) do
-            if v == 'green_seal' then info_queue[#info_queue + 1] = { key = 'green_seal', set = 'Other' } end
+            if v == 'pink_seal' then info_queue[#info_queue + 1] = { key = 'pink_seal', set = 'Other' } end
         end
     end
 
@@ -330,8 +330,8 @@ local get_badge_colour_ref = get_badge_colour
 function get_badge_colour(key)
     local fromRef = get_badge_colour_ref(key)
 
-    if key == 'green_seal' then
-        return G.C.GREEN
+    if key == 'pink_seal' then
+        return G.C.ETERNAL
     end
 
     return fromRef
