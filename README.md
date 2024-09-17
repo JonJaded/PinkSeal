@@ -1,4 +1,4 @@
-# GreenSeal
+# GreenSeal, but with a new coat of color!
 
 A mod for Baltro that adds in a green seal which will increase the hand size for a given round by 1 when discarded. Also adds a spectral card that applies the seal to one card.
 
